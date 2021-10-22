@@ -1,0 +1,2 @@
+# .dotfiles
+Archios de configuración
