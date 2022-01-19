@@ -124,6 +124,7 @@ source $ZSH/oh-my-zsh.sh
 alias zconfig="nvim ~/.zshrc"
 alias nconfig="cd ~/.config/nvim"
 alias proyectos="cd /Applications/XAMPP/xamppfiles/htdocs"
+alias mysql="/usr/local/mysql/bin/mysql"
 #======================================================= //
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
