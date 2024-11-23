@@ -1,15 +1,27 @@
+export PATH=$HOME/.composer/vendor/bin:$PATH
+
+# Consideraciones, para personalizar zsh y p10k zsh
+# Bajar fuentes
+# Bajar oh.my.zsh
+# Bajar p10k
+# Instalar pluggins mediante copia de repositorios
+#
+#
+#
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}%c%${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+  # source "${XDG_CACHE_HOME:-$HOME/.cache}%c%${(%):-%n}.zsh"
 fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/sandoval/.oh-my-zsh"
+export ZSH="/Users/msandoval/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -18,6 +30,7 @@ export ZSH="/Users/sandoval/.oh-my-zsh"
 # ZSH_THEME="robbyrussell"
 # ZSH_THEME="agnoster"
 ZSH_THEME="powerlevel10k/powerlevel10k"
+
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -82,7 +95,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
     git
     zsh-autosuggestions
-    zsh-syntax-highlighting
+    fast-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -122,10 +135,38 @@ source $ZSH/oh-my-zsh.sh
 #
 # Alias para crear atajos con ZSH ====================== //
 alias zconfig="nvim ~/.zshrc"
-alias nconfig="cd ~/.config/nvim"
-alias proyectos="cd /Applications/XAMPP/xamppfiles/htdocs"
-alias mysql="/usr/local/mysql/bin/mysql"
+# alias nconfig="cd ~/.config/nvim"
+alias project_php="cd /Applications/XAMPP/xamppfiles/htdocs"
+alias project_react="cd ~/Documents/'Proyectos React'"
+alias power10k="nvim ~/.p10k.zsh"
+alias project_astro="cd ~/Documents/'Proyectos Astro'"
+#alias mysql="/usr/local/mysql/bin/mysql"
 #======================================================= //
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+
+# VER POR QUE Y PARA QUE SE USA ESTA LINEA DE COMANDO
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/Users/msandoval/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+    # eval "$__conda_setup"
+# else
+    # if [ -f "/Users/msandoval/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        # . "/Users/msandoval/opt/anaconda3/etc/profile.d/conda.sh"
+    # else
+        # export PATH="/Users/msandoval/opt/anaconda3/bin:$PATH"
+    # fi
+# fi
+# unset __conda_setup
+# <<< conda initialize <<<
+
+
+PATH=~/.console-ninja/.bin:$PATH
