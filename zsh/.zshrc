@@ -1,14 +1,6 @@
 export PATH=$HOME/.composer/vendor/bin:$PATH
 export PATH=$HOME/development/flutter/bin:$PATH
 
-# Consideraciones, para personalizar zsh y p10k zsh
-# Bajar fuentes
-# Bajar oh.my.zsh
-# Bajar p10k
-# Instalar pluggins mediante copia de repositorios
-#
-#
-#
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -58,6 +50,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
+# (desabilita los colores personalizado en la terminal y del tema sobre el contenido mostrado)
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
@@ -126,17 +119,11 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-# Alias para crear atajos con ZSH ====================== //
-# alias for environment configuration
+# alias for environment configuration ====================== //
 alias zconfig="nvim ~/.zshrc"
 alias nconfig="cd ~/.config/nvim"
 
@@ -145,28 +132,11 @@ alias project_php="cd /Applications/XAMPP/xamppfiles/htdocs"
 alias project_react="cd ~/Documents/'Proyectos React'"
 alias project_astro="cd ~/Documents/'Proyectos Astro'"
 alias power10k="nvim ~/.p10k.zsh"
-#alias mysql="/usr/local/mysql/bin/mysql"
 #======================================================= //
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-
-# VER POR QUE Y PARA QUE SE USA ESTA LINEA DE COMANDO
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-# __conda_setup="$('/Users/msandoval/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-# if [ $? -eq 0 ]; then
-    # eval "$__conda_setup"
-# else
-    # if [ -f "/Users/msandoval/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        # . "/Users/msandoval/opt/anaconda3/etc/profile.d/conda.sh"
-    # else
-        # export PATH="/Users/msandoval/opt/anaconda3/bin:$PATH"
-    # fi
-# fi
-# unset __conda_setup
-# <<< conda initialize <<<
 
 # function to delete view text in promp
 z () {
