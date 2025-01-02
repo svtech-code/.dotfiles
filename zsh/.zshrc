@@ -1,4 +1,5 @@
 export PATH=$HOME/.composer/vendor/bin:$PATH
+export PATH=$HOME/development/flutter/bin:$PATH
 
 # Consideraciones, para personalizar zsh y p10k zsh
 # Bajar fuentes
@@ -94,6 +95,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
     git
+    z
     zsh-autosuggestions
     fast-syntax-highlighting
 )
@@ -134,22 +136,20 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 # Alias para crear atajos con ZSH ====================== //
+# alias for environment configuration
 alias zconfig="nvim ~/.zshrc"
-# alias nconfig="cd ~/.config/nvim"
+alias nconfig="cd ~/.config/nvim"
+
+# alias for project container
 alias project_php="cd /Applications/XAMPP/xamppfiles/htdocs"
 alias project_react="cd ~/Documents/'Proyectos React'"
-alias power10k="nvim ~/.p10k.zsh"
 alias project_astro="cd ~/Documents/'Proyectos Astro'"
+alias power10k="nvim ~/.p10k.zsh"
 #alias mysql="/usr/local/mysql/bin/mysql"
 #======================================================= //
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 
 
 # VER POR QUE Y PARA QUE SE USA ESTA LINEA DE COMANDO
@@ -168,5 +168,11 @@ export NVM_DIR="$HOME/.nvm"
 # unset __conda_setup
 # <<< conda initialize <<<
 
+# function to delete view text in promp
+z () {
+  zshz "$@" >/dev/null 2>&1
+}
 
 PATH=~/.console-ninja/.bin:$PATH
+
+eval "$(fnm env)"

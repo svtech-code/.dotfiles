@@ -1,0 +1,22 @@
+return {
+  -- "folke/noice.nvim",
+  -- config = function()
+  --   require("noice").setup({
+  --
+  --     lsp = {
+  --       signature = { enabled = true },
+  --       hover = { enabled = true },
+  --       progress = { enabled = true },
+  --     },
+  --     -- messages = {
+  --     --   enabled = true,
+  --     --   view = "mini",
+  --     -- },
+  --     presets = {
+  --       -- bottom_search = true,
+  --       command_palette = true,
+  --       lsp_doc_border = true,
+  --     },
+  --   })
+  -- end,
+}

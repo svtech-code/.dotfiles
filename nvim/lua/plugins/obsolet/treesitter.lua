@@ -1,0 +1,43 @@
+return {
+  -- Plugin: nvim-treesitter
+  -- URL: https://github.com/nvim-treesitter/nvim-treesitter?tab=readme-ov-file
+  -- Description: Pluggin para resaltar la sintaxis de los lenguajes
+
+  --   {
+  --     "nvim-treesitter/nvim-treesitter",
+  --     opts = {
+  --       ensure_installed = {
+  --         "astro",
+  --         "bash",
+  --         "css",
+  --         "html",
+  --         "javascript",
+  --         "json",
+  --         "lua",
+  --         "markdown",
+  --         "markdown_inline",
+  --         "php",
+  --         "python",
+  --         "query",
+  --         "regex",
+  --         "tsx",
+  --         "typescript",
+  --         "vim",
+  --         "yaml",
+  --         "dart",
+  --       },
+  --     },
+  --   },
+}
+
+-- otra opción considerando agregar nuevos lenguajes a un ensure_installed previamente configurado
+-- {
+--   "nvim-treesitter/nvim-treesitter",
+--   opts = function(_, opts)
+--     -- add tsx and treesitter
+--     vim.list_extend(opts.ensure_installed, {
+--       "tsx",
+--       "typescript",
+--     })
+--   end,
+-- },

@@ -1,0 +1,21 @@
+return {}
+-- plugin de flutter
+-- {
+--     "akinsho/flutter-tools.nvim",
+--     dependencies = {
+--       "nvim-lua/plenary.nvim",
+--       "stevearc/dressing.nvim", -- Mejoras en los diálogos flotantes
+--     },
+--     config = function()
+--       require("flutter-tools").setup {
+--         lsp = {
+--           on_attach = function(_, bufnr)
+--             -- Atajos específicos para Flutter
+--             local bufopts = { noremap = true, silent = true, buffer = bufnr }
+--             vim.keymap.set("n", "<leader>fr", ":FlutterRun<CR>", bufopts) -- Ejecutar Flutter
+--             vim.keymap.set("n", "<leader>fq", ":FlutterQuit<CR>", bufopts) -- Salir de Flutter
+--           end,
+--         },
+--       }
+--     end,
+--   },
