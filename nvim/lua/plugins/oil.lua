@@ -5,6 +5,10 @@ return {
 
   "stevearc/oil.nvim",
   opts = {
+    -- show hidden files
+    view_options = {
+      show_hidden = true,
+    },
     -- Key mappings for oil.nvim actions
     keymaps = {
       -- ["g?"] = "actions.show_help", -- Show help
