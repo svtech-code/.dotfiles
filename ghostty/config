@@ -1,0 +1,53 @@
+######################################
+#
+#         SV TECH - CODE 
+#
+######################################
+
+shell-integration = zsh
+# theme = Kanagawa Dragon
+# theme = tokyonight-storm
+theme = MaterialOcean
+# theme = svtech-code
+
+# 🖥️ [windows] 
+macos-titlebar-style = hidden
+window-height = 32
+window-width = 100
+window-padding-x = 10
+window-padding-y = 10
+window-padding-balance = true
+
+
+# 🎨 [background]
+background-opacity = 0.9
+resize-overlay = always
+background-blur-radius = 12
+
+
+
+# 📇 [fonts]
+font-family = "Cascadia Code NF"
+font-feature = -liga
+font-size = 22
+
+
+
+# 🛠️ [other]
+mouse-scroll-multiplier = 2
+mouse-hide-while-typing = true
+
+
+# 📌 [cursor] 
+# cursor-color = #59ffd1
+
+
+# 🚀 [triggers]
+
+
+# 📚 [personal colors]
+# background = #1a1b26
+# foreground = #a9b1d6
+# selection-background = #607ebe
+# selection-foreground = #3a4261
+

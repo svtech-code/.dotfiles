@@ -6,6 +6,8 @@ return {
   -- Description: pluggin para personalizar presentación de nvim
 
   "folke/snacks.nvim",
+  priority = 1000,
+  lazy = false,
   opts = {
     dashboard = {
       sections = {

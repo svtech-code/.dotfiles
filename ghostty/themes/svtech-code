@@ -1,0 +1,36 @@
+# 👾 [theme svtech-code]
+background = #1a1b26
+foreground = #a9b1d6
+
+selection-background = #607ebe
+selection-foreground = #3a4261
+
+cursor-color = #59ffd1
+
+# 📝 [documentacion]
+# 1 -> color texto con errores
+# 2 -> color texto escritura
+# 3 ->
+# 4 ->
+# 5 -> color texto enlaces simbólicos
+# 6 -> color del texto de directorios
+# 7 -> color del texto del promp
+# 8 -> color del texto de autocompletado
+
+# 🎨 [paleta de colores]
+palette = 0=#435b67
+palette = 1=#a0433d
+palette = 2=#75c0ed
+palette = 3=#fef878
+palette = 5=#bb9af7
+palette = 6=#33a7c1
+palette = 7=#ffffff
+palette = 8=#7aa2f7
+palette = 4=#37b6ff
+palette = 9=#fc746d
+palette = 10=#5cff8e
+palette = 11=#fee16c
+palette = 12=#70cfff
+palette = 13=#9a77f8
+palette = 14=#9affe6
+palette = 15=#ffffff
