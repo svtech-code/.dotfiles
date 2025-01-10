@@ -1,13 +1,9 @@
--- customizing the envitonment
-
 return {
   -- Plugin: snacks.nvim
   -- URL: https://github.com/folke/snacks.nvim
   -- Description: pluggin para personalizar presentación de nvim
 
   "folke/snacks.nvim",
-  priority = 1000,
-  lazy = false,
   opts = {
     dashboard = {
       sections = {
@@ -53,4 +49,9 @@ return {
       },
     },
   },
+
+  config = function(_, opts)
+    require("snacks").setup(opts)
+    vim.api.nvim_set_hl(0, "SnacksDashboardHeader", { fg = "#00b0c2", bold = true })
+  end,
 }

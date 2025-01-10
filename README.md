@@ -1,10 +1,10 @@
 # .dotfiles
 
-A continuación, encotrarás mi *.dotfiles* con las configuraciones de mi entorno de trabajo.
+A continuación, encotrarás mi *.dotfiles* con las configuraciones de mi entorno de trabajo en MacOS.
 
 ## Nvim whit LazyVim
 
-![https://github.com/svtech-code](./assets/nvim.png)
+![https://github.com/svtech-code](./assets/workSpace.png)
 
 Neovim es un editor de texto de código abierto basado en vim, con el cual, tienes la total libertad de personalizarlo a medida.
 [web oficial](https://neovim.io)

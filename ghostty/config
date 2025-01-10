@@ -1,14 +1,16 @@
 ######################################
-#
-#         SV TECH - CODE 
-#
+ 
+#           SV TECH - CODE 
+ 
 ######################################
 
 shell-integration = zsh
+# theme = catppuccin-mocha
 # theme = Kanagawa Dragon
-# theme = tokyonight-storm
+# theme = tokyonight_night
 theme = MaterialOcean
-# theme = svtech-code
+# theme = rose-pine
+
 
 # 🖥️ [windows] 
 macos-titlebar-style = hidden
@@ -40,14 +42,4 @@ mouse-hide-while-typing = true
 
 # 📌 [cursor] 
 # cursor-color = #59ffd1
-
-
-# 🚀 [triggers]
-
-
-# 📚 [personal colors]
-# background = #1a1b26
-# foreground = #a9b1d6
-# selection-background = #607ebe
-# selection-foreground = #3a4261
 
