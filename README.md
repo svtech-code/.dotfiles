@@ -28,6 +28,8 @@ Instalando las fuentes [nerd fonts](https://www.nerdfonts.com), podrás disfruta
 brew install --cask font-hack-nerd-font
 ```
 
+<br><br>
+
 
 ## Configuraciones de mi espacio de trabajo
 A continuación, tienes el acceso hacia las configuraciones de cada una de las herramientas que utilizo actualmente para mi entorno de trabajo, en donde, encontrarás como instalarlas e implementarlas, para un entorno de trabajo en macOS.
@@ -37,7 +39,7 @@ A continuación, tienes el acceso hacia las configuraciones de cada una de las h
 - [nvim](https://github.com/svtech-code/.dotfiles/tree/main/nvim) - Un editor de texto poderoso para programar.
 - [tmux](https://github.com/svtech-code/.dotfiles/tree/main/tmux) - Un multiplexor para trabajar con diferentes pantallas en un mismo entorno.
 
-
+<br><br>
 
 ## Herramientas de trabajo
 Por último, a continuación podrás revisar las herramientas que he probado, para que puedas revisar su web y comprobar si alguna de estas llama tu atención.
