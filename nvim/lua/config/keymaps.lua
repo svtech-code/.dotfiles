@@ -3,11 +3,17 @@
 -- Add any additional keymaps here
 local personal_function = require("config.functions")
 
---- oil ---
+--- oil
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
---- insert description ---
+--- insert description
 vim.keymap.set("n", "<leader>a", personal_function.description, { desc = "Insertar esquema de detalle de un pluggin" })
 
----  ejecutar dart en terminal flotante ---
+--- ejecutar dart en terminal flotante
 vim.keymap.set("n", "<leader>da", personal_function.dartEject, { desc = "Ejecutar dart en terminal" })
+
+-- ejecutar un quick chat de copilot
+vim.keymap.set("n", "<leader>cn", personal_function.chatCopilot, { desc = "quick chat Copilot" })
+
+-- abrir chat de copilot
+vim.keymap.set("n", "<leader>cN", personal_function.toggleChatCopilot, { desc = "Chat flotante Copilot" })

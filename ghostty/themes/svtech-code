@@ -18,19 +18,35 @@ cursor-color = #59ffd1
 # 8 -> color del texto de autocompletado
 
 # 🎨 [paleta de colores]
-palette = 0=#435b67
-palette = 1=#a0433d
-palette = 2=#75c0ed
-palette = 3=#fef878
-palette = 5=#bb9af7
-palette = 6=#33a7c1
-palette = 7=#ffffff
-palette = 8=#7aa2f7
-palette = 4=#37b6ff
-palette = 9=#fc746d
-palette = 10=#5cff8e
-palette = 11=#fee16c
-palette = 12=#70cfff
-palette = 13=#9a77f8
-palette = 14=#9affe6
+# palette = 0=#435b67
+# palette = 1=#a0433d
+# palette = 2=#75c0ed
+# palette = 3=#fef878
+# palette = 5=#bb9af7
+# palette = 6=#33a7c1
+# palette = 7=#ffffff
+# palette = 8=#7aa2f7
+# palette = 4=#37b6ff
+# palette = 9=#fc746d
+# palette = 10=#5cff8e
+# palette = 11=#fee16c
+# palette = 12=#70cfff
+# palette = 13=#9a77f8
+# palette = 14=#9affe6
+# palette = 15=#ffffff
+palette = 0=#000000
+palette = 1=#23174f
+palette = 2=#2e2776
+palette = 3=#360d89
+palette = 4=#3e3cc0
+palette = 5=#4747d1
+palette = 6=#503072
+palette = 7=#593077
+palette = 8=#634ac8
+palette = 9=#6f10c7
+palette = 10=#7c58e9
+palette = 11=#9418c8
+palette = 12=#b493f0
+palette = 13=#d7b6cf
+palette = 14=#f0ab85
 palette = 15=#ffffff

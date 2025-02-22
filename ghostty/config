@@ -5,20 +5,22 @@
 ######################################
 
 shell-integration = zsh
+# theme = MaterialOcean
 # theme = catppuccin-mocha
 # theme = Kanagawa Dragon
-# theme = tokyonight_night
-theme = MaterialOcean
+theme = tokyonight_night
 # theme = rose-pine
+# theme = svtech-code
 
 
 # 🖥️ [windows] 
 macos-titlebar-style = hidden
-window-height = 32
-window-width = 100
+window-height = 29
+window-width = 118
 window-padding-x = 10
 window-padding-y = 10
 window-padding-balance = true
+confirm-close-surface = false
 
 
 # 🎨 [background]
@@ -27,12 +29,10 @@ resize-overlay = always
 background-blur-radius = 12
 
 
-
 # 📇 [fonts]
 font-family = "Cascadia Code NF"
 font-feature = -liga
 font-size = 22
-
 
 
 # 🛠️ [other]
@@ -42,4 +42,10 @@ mouse-hide-while-typing = true
 
 # 📌 [cursor] 
 # cursor-color = #59ffd1
+
+
+# 👾 quick terminal 
+keybind = global:cmd+s=toggle_quick_terminal
+# quick-terminal-position = bottom
+quick-terminal-position = center
 

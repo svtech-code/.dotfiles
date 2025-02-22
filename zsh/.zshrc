@@ -3,7 +3,7 @@
 export ZSH="/Users/msandoval/.oh-my-zsh"
 
 export PATH=$HOME/.composer/vendor/bin:$PATH
-export PATH=$HOME/development/flutter/bin:$PATH
+# export PATH=$HOME/development/flutter/bin:$PATH
 PATH=~/.console-ninja/.bin:$PATH
 
 source ~/.dotfiles/zsh/svtech.zsh-theme
@@ -64,3 +64,7 @@ eval "$(fnm env)"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
+
+
+# bun completions
+[ -s "/Users/msandoval/.bun/_bun" ] && source "/Users/msandoval/.bun/_bun"

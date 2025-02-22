@@ -17,4 +17,16 @@ F.dartEject = function()
   vim.cmd("!dart" .. vim.fn.shellescape(file))
 end
 
+F.chatCopilot = function()
+  local input = vim.fn.input("Quick Chat: ")
+  if input ~= "" then
+    require("CopilotChat").ask(input, { selection = require("CopilotChat.select").buffer })
+  end
+end
+
+F.toggleChatCopilot = function()
+  local copilotChat = require("CopilotChat")
+  copilotChat.open()
+end
+
 return F
