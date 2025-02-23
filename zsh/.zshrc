@@ -18,7 +18,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Visit -> https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="robbyrussell"
 # ZSH_THEME="powerlevel10k/powerlevel10k"
 ZSH_THEME=""
 
@@ -57,14 +56,39 @@ z () {
   zshz "$@" >/dev/null 2>&1
 }
 
-
 eval "$(fnm env)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 
-
-
 # bun completions
 [ -s "/Users/msandoval/.bun/_bun" ] && source "/Users/msandoval/.bun/_bun"
+
+# script for ghostty opacity
+toggle_ghostty_opacity() {
+  # local SCRIPT_PATH="$HOME/.config/ghostty/toggle_ghostty_opacity.sh"
+  local CONFIG_PATH="$HOME/.config/ghostty/config"
+
+  if [ "$TERM" != "xterm-ghostty" ]; then
+    echo "Script valid only for ghostty !"
+    return
+  fi
+
+
+  if grep -q '^[[:space:]]*#.*background-opacity' "$CONFIG_PATH"; then
+    sed -i '' 's/^[[:space:]]*#\([[:space:]]*background-opacity[[:space:]]*=.*\)/\1/' "$CONFIG_PATH"
+    echo "Opacity on!"
+
+  elif grep -q '^[[:space:]]*background-opacity' "$CONFIG_PATH"; then
+    sed -i '' 's/^[[:space:]]*\(background-opacity[[:space:]]*=.*\)/#\1/' "$CONFIG_PATH"
+    echo "Opacity off!"
+
+  else
+    echo "the background-opacity line does not exist"
+
+  fi
+
+  # Simula la combinación de teclas cmd+shift+,
+  osascript -e 'tell application "System Events" to keystroke "," using {command down, shift down}'
+}
