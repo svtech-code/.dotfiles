@@ -18,18 +18,17 @@ theme = tokyonight_night
 
 # # 🖥️ [windows] 
 macos-titlebar-style = hidden
-window-height = 29
-window-width = 118
+window-height = 30
+window-width = 120
 window-padding-x = 10
 window-padding-y = 10
 window-padding-balance = true
 confirm-close-surface = false
 window-step-resize = true
-# # window-save-state = always
 
 
 # 🎨 [background]
-background-opacity = 0.9
+background-opacity = 0.92
 resize-overlay = always
 background-blur-radius = 12
 split-divider-color = #66cccc
@@ -38,7 +37,7 @@ split-divider-color = #66cccc
 # 📇 [fonts]
 font-family = "Cascadia Code NF"
 font-feature = -liga
-font-size = 23
+font-size = 18 
 
 
 # 📌 [mouse and cursor] 
@@ -68,5 +67,4 @@ keybind = global:cmd+g=toggle_visibility
 keybind = cmd+f=toggle_fullscreen
 
 keybind = cmd+,=text:nvim ~/.config/ghostty/config\n
-
 keybind = cmd+x=text:toggle_ghostty_opacity\n
