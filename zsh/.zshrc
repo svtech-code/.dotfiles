@@ -67,7 +67,6 @@ eval "$(fnm env)"
 
 # script for ghostty opacity
 toggle_ghostty_opacity() {
-  # local SCRIPT_PATH="$HOME/.config/ghostty/toggle_ghostty_opacity.sh"
   local CONFIG_PATH="$HOME/.config/ghostty/config"
 
   if [ "$TERM" != "xterm-ghostty" ]; then
