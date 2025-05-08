@@ -5,6 +5,7 @@ return {
 
   "folke/snacks.nvim",
   opts = {
+    image = {},
     dashboard = {
       sections = {
         { section = "header" },
