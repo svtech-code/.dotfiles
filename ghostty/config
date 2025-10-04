@@ -9,7 +9,8 @@ shell-integration = zsh
 
 
 # 🖼️ [themes]
-theme = tokyonight_night
+# theme = tokyonight_night
+theme = TokyoNight Night
 # theme = MaterialOcean
 # theme = catppuccin-mocha
 # theme = Kanagawa Dragon

@@ -10,7 +10,8 @@ return {
   "CopilotC-Nvim/CopilotChat.nvim",
   opts = {
     prompts = prompts,
-    model = "gpt-4o",
+    -- model = "gpt-4o",
+    model = "claude-3.5-sonnet",
     answer_header = " { sv tech } ",
     window = {
       layout = "float",

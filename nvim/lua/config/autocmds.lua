@@ -1,0 +1,175 @@
+-- -- Este archivo se carga automáticamente gracias a la estructura de LazyVim.
+-- -- Es un buen lugar para configuraciones personalizadas, comandos y atajos.
+--
+-- local function setup_gemini_integration()
+--   local term_buf = nil
+--
+--   local function open_gemini_in_float(cmd)
+--     if term_buf and vim.api.nvim_buf_is_valid(term_buf) then
+--       local win = vim.fn.bufwinid(term_buf)
+--       if win ~= -1 then
+--         vim.api.nvim_set_current_win(win)
+--         vim.api.nvim_chan_send(vim.b[term_buf].term_job_id, cmd .. "\n")
+--         return
+--       end
+--     end
+--
+--     term_buf = vim.api.nvim_create_buf(false, true)
+--     local win_height = math.floor(vim.o.lines * 0.6)
+--     local win_width = math.floor(vim.o.columns * 0.7)
+--     local row = math.floor((vim.o.lines - win_height) / 2)
+--     local col = math.floor((vim.o.columns - win_width) / 2)
+--
+--     local win_id = vim.api.nvim_open_win(term_buf, true, {
+--       relative = "editor",
+--       width = win_width,
+--       height = win_height,
+--       row = row,
+--       col = col,
+--       style = "minimal",
+--       border = "rounded",
+--       title = "Gemini CLI",
+--       title_pos = "center",
+--     })
+--
+--     -- Atajo para cerrar la ventana con 'q' en modo normal
+--     vim.keymap.set("n", "q", function()
+--       if vim.api.nvim_buf_is_valid(term_buf) then
+--         vim.api.nvim_buf_delete(term_buf, { force = true })
+--       end
+--     end, { buffer = term_buf, silent = true, desc = "Cerrar ventana de Gemini" })
+--
+--     vim.cmd("startinsert")
+--     vim.b[term_buf].term_job_id = vim.fn.termopen(cmd, {
+--       on_exit = function()
+--         term_buf = nil
+--       end,
+--     })
+--   end
+--
+--   vim.api.nvim_create_user_command("Gemini", function(opts)
+--     local user_question = table.concat(opts.fargs, " ")
+--
+--     -- Intenta obtener el contenido del archivo actual
+--     local file_path = vim.fn.expand("%:p")
+--     local file_content = ""
+--     if file_path and file_path ~= "" then
+--       file_content = table.concat(vim.fn.readfile(file_path), "\n")
+--     end
+--
+--     local final_prompt
+--     if file_content ~= "" then
+--       -- Si hay contenido de archivo, úsalo como contexto
+--       local file_name = vim.fn.expand("%:t")
+--       final_prompt = string.format(
+--         "Considerando el siguiente archivo llamado `%s`, responde a la siguiente pregunta.\n\nArchivo:\n```\n%s\n```\n\nPregunta: %s",
+--         file_name,
+--         file_content,
+--         user_question
+--       )
+--     else
+--       -- Si no hay archivo, envía solo la pregunta
+--       final_prompt = user_question
+--     end
+--
+--     local escaped_prompt = vim.fn.shellescape(final_prompt)
+--     open_gemini_in_float("gemini -p " .. escaped_prompt)
+--   end, {
+--     nargs = "+",
+--     complete = "file",
+--     desc = "Enviar pregunta a Gemini CLI",
+--   })
+--
+--   vim.keymap.set("v", "<leader>m", function()
+--     print("Atajo <leader>g activado en modo visual.") -- Línea de depuración
+--     local _, start_row, start_col, _ = unpack(vim.fn.getpos("'<"))
+--     local _, end_row, end_col, _ = unpack(vim.fn.getpos("'>"))
+--     local lines = vim.api.nvim_buf_get_text(0, start_row - 1, start_col - 1, end_row - 1, end_col, {})
+--     local selected_text = table.concat(lines, "\n")
+--
+--     local user_input = vim.fn.input("Pregunta para Gemini (sobre el texto seleccionado): ")
+--     if user_input == "" or user_input == nil then
+--       print("Cancelado.")
+--       return
+--     end
+--
+--     -- Obtener el contenido completo del archivo actual
+--     local file_path = vim.fn.expand("%:p")
+--     local file_content = ""
+--     local file_name = ""
+--     if file_path and file_path ~= "" then
+--       file_content = table.concat(vim.fn.readfile(file_path), "\n")
+--       file_name = vim.fn.expand("%:t")
+--     end
+--
+--     local final_prompt
+--     if file_content ~= "" then
+--       final_prompt = string.format(
+--         "Considerando el siguiente archivo completo llamado `%s`, y enfocándote **exclusivamente** en el bloque de código seleccionado, **proporciona una explicación concisa y directa** en respuesta a la siguiente pregunta.\n\nArchivo Completo:\n```\n%s\n```\n\nCódigo Seleccionado:\n```\n%s\n```\n\nPregunta: %s",
+--         file_name,
+--         file_content,
+--         selected_text,
+--         user_input
+--       )
+--     else
+--       -- Si no hay archivo, solo usa el texto seleccionado y la pregunta
+--       final_prompt = string.format("%s\n\n```\n%s\n```", user_input, selected_text)
+--     end
+--
+--     local escaped_prompt = vim.fn.shellescape(final_prompt)
+--     open_gemini_in_float("gemini -p " .. escaped_prompt)
+--   end, {
+--     desc = "Preguntar sobre la selección",
+--     noremap = true,
+--     silent = true,
+--   })
+--
+--   -- Comando para iniciar un chat interactivo con el contexto del archivo actual
+--   vim.api.nvim_create_user_command("GeminiChat", function()
+--     local file_path = vim.fn.expand("%:p") -- Obtiene la ruta completa del archivo actual
+--     if file_path == "" then
+--       -- Si no hay archivo, inicia un chat normal
+--       open_gemini_in_float("gemini")
+--       return
+--     end
+--
+--     local file_content = table.concat(vim.fn.readfile(file_path), "\n")
+--     local file_name = vim.fn.expand("%:t") -- Obtiene solo el nombre del archivo
+--
+--     local initial_prompt = string.format(
+--       "Tengo el siguiente archivo llamado `%s` abierto. Úsalo como contexto para mis siguientes preguntas.\n\n```\n%s\n```",
+--       file_name,
+--       file_content
+--     )
+--
+--     local escaped_prompt = vim.fn.shellescape(initial_prompt)
+--     open_gemini_in_float("gemini -p " .. escaped_prompt)
+--   end, {
+--     nargs = 0, -- No acepta argumentos
+--     desc = "Iniciar chat con Gemini usando el archivo actual como contexto",
+--   })
+--
+--   -- Atajos de teclado para los comandos de Gemini
+--   -- Atajo para pregunta rápida
+--   vim.keymap.set("n", "<leader>cn", function()
+--     local user_input = vim.fn.input("Pregunta para Gemini: ")
+--     if user_input and user_input ~= "" then
+--       vim.cmd("Gemini " .. user_input)
+--     else
+--       print("Cancelado.")
+--     end
+--   end, { desc = "Hacer pregunta a Gemini" })
+--
+--   -- Atajo para iniciar el chat con contexto
+--   vim.keymap.set("n", "<leader>cN", function()
+--     vim.cmd("GeminiChat")
+--   end, { desc = "Iniciar chat con Gemini (contexto de archivo)" })
+--
+--   vim.api.nvim_echo({ { "Integración con Gemini CLI cargada.", "None" } }, false, {})
+-- end
+--
+-- -- Llama a la función de configuración.
+-- setup_gemini_integration()
+--
+-- -- LazyVim espera que este archivo devuelva una tabla (puede ser vacía).
+-- return {}

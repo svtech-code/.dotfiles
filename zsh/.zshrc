@@ -91,3 +91,6 @@ toggle_ghostty_opacity() {
   # Simula la combinación de teclas cmd+shift+,
   osascript -e 'tell application "System Events" to keystroke "," using {command down, shift down}'
 }
+
+# opencode
+export PATH=/Users/msandoval/.opencode/bin:$PATH
